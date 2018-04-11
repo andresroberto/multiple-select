@@ -8,6 +8,9 @@
     "multiple",
     "select"
   ],
+  "repository": {
+    "url": "https://github.com/andresroberto/react-multiple-select-component"
+  },
   "scripts": {
     "start": "rollup -c"
   },
