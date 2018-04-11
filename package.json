@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "description": "React component on top of a select element with multiple attribute",
   "main": "main.js",
+  "keywords": [
+    "react",
+    "multiple",
+    "select"
+  ],
   "scripts": {
     "start": "rollup -c"
   },
