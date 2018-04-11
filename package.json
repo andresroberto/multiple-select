@@ -1,0 +1,14 @@
+{
+  "name": "multiselect",
+  "version": "1.0.0",
+  "description": "React component on top of a select element with multiselect attribute",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Rojas",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.3.1"
+  }
+}
