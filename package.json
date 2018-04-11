@@ -1,6 +1,6 @@
 {
   "name": "react-multiple-select-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React component on top of a select element with multiple attribute",
   "main": "main.js",
   "keywords": [
