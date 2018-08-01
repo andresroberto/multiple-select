@@ -29,11 +29,13 @@ var MultipleSelect = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call.apply(_ref, [this].concat(args))), _this), _this.handleChange = function (event) {
-      var values = [].concat(_toConsumableArray(event.target.options)).filter(function (option) {
-        return option.selected;
-      }).map(function (option) {
-        return option.value;
-      });
+      var values = [].concat(_toConsumableArray(event.target.options)).reduce(function (values, option) {
+        if (option.value) {
+          return [].concat(_toConsumableArray(values), [value]);
+        }
+
+        return values;
+      }, {});
 
       _this.props.onChange(event, values);
     }, _temp), _possibleConstructorReturn(_this, _ret);

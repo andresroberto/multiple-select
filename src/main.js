@@ -3,8 +3,13 @@ const React = require('react');
 class MultipleSelect extends React.Component {
   handleChange = (event) => {
     const values = [...event.target.options]
-      .filter(option => option.selected)
-      .map(option => option.value);
+      .reduce((values, option) => {
+        if (option.value) {
+          return [...values, value];
+        }
+
+        return values;
+      }, {});
 
     this.props.onChange(event, values);
   }
