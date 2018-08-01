@@ -2,7 +2,7 @@
   "name": "react-multiple-select-component",
   "version": "1.0.3",
   "description": "React component on top of a select element with multiple attribute",
-  "main": "main.js",
+  "main": "build/main.js",
   "keywords": [
     "react",
     "multiple",
@@ -12,8 +12,9 @@
     "url": "https://github.com/andresroberto/react-multiple-select-component"
   },
   "scripts": {
-    "start": "rollup -c",
-    "lint": "eslint ./src/**/*.js rollup.config.js"
+    "build": "rollup -c",
+    "lint": "eslint ./src/**/*.js rollup.config.js",
+    "prepare": "npm run build"
   },
   "author": "Andres Rojas",
   "license": "MIT",

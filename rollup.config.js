@@ -3,7 +3,7 @@ import babel from 'rollup-plugin-babel';
 export default {
   input: 'src/main.js',
   output: {
-    file: 'main.js',
+    file: 'build/main.js',
     format: 'cjs'
   },
   plugins: [
