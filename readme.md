@@ -10,19 +10,22 @@ The function passed as the 'onChange' prop will receive two parameters:
 For example:
 
 ```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
 import MultipleSelect from 'react-multiple-select-component';
 
 class Sample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {values: []};
-  }
+  state = {
+    values: [],
+  };
+
   handleChange = (event, values) => {
     console.log('The original event', event);
     console.log('An array of selected values', values);
 
-    this.setState({values});
+    this.setState({ values });
   }
+
   render() {
     return (
       <MultipleSelect
@@ -41,4 +44,5 @@ ReactDOM.render(
   <Sample />,
   document.getElementById('root')
 );
+
 ```
