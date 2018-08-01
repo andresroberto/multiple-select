@@ -46,3 +46,10 @@ ReactDOM.render(
 );
 
 ```
+
+## For version 1.1
+
+[ ] Add unit tests
+[ ] Add a live sample
+[ ] Pass ref using React.forwardRef
+[ ] Only call onChange if it exists
