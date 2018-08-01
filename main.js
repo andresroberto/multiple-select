@@ -17,27 +17,29 @@ var React = require('react');
 var MultipleSelect = function (_React$Component) {
   _inherits(MultipleSelect, _React$Component);
 
-  function MultipleSelect(props) {
+  function MultipleSelect() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, MultipleSelect);
 
-    var _this = _possibleConstructorReturn(this, (MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.handleChange = _this.handleChange.bind(_this);
-    return _this;
-  }
-
-  _createClass(MultipleSelect, [{
-    key: 'handleChange',
-    value: function handleChange(event) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call.apply(_ref, [this].concat(args))), _this), _this.handleChange = function (event) {
       var values = [].concat(_toConsumableArray(event.target.options)).filter(function (option) {
         return option.selected;
       }).map(function (option) {
         return option.value;
       });
 
-      this.props.onChange(event, values);
-    }
-  }, {
+      _this.props.onChange(event, values);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(MultipleSelect, [{
     key: 'render',
     value: function render() {
       return React.createElement('select', _extends({}, this.props, {

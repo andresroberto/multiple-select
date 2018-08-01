@@ -10,7 +10,8 @@ export default {
     babel({
       presets: [['env', { modules: false }], 'react'],
       exclude: 'node_modules/**',
-      babelrc: false
+      babelrc: false,
+      plugins: ["transform-class-properties"]
     }),
   ]
 };
