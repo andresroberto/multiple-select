@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const getValuesFromSelect = selectElement =>
   [...selectElement.options]
-    .reduce((values, { value }) => {
-      if (value) {
+    .reduce((values, { selected, value }) => {
+      if (selected) {
         return [...values, value];
       }
 
