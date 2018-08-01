@@ -1,4 +1,5 @@
 const React = require('react');
+const PropTypes = require('prop-types');
 
 const getValuesFromSelect = selectElement =>
   [...selectElement.options]
@@ -25,5 +26,9 @@ class MultipleSelect extends React.Component {
     );
   }
 }
+
+MultipleSelect.propTypes = {
+  onChange: PropTypes.func,
+};
 
 module.exports = MultipleSelect;

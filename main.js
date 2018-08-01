@@ -4,15 +4,26 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var React = require('react');
+var PropTypes = require('prop-types');
+
+var getValuesFromSelect = function getValuesFromSelect(selectElement) {
+  return [].concat(_toConsumableArray(selectElement.options)).reduce(function (values, option) {
+    if (option.value) {
+      return [].concat(_toConsumableArray(values), [value]);
+    }
+
+    return values;
+  }, {});
+};
 
 var MultipleSelect = function (_React$Component) {
   _inherits(MultipleSelect, _React$Component);
@@ -29,14 +40,7 @@ var MultipleSelect = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call.apply(_ref, [this].concat(args))), _this), _this.handleChange = function (event) {
-      var values = [].concat(_toConsumableArray(event.target.options)).reduce(function (values, option) {
-        if (option.value) {
-          return [].concat(_toConsumableArray(values), [value]);
-        }
-
-        return values;
-      }, {});
-
+      var values = getValuesFromSelect(event.target);
       _this.props.onChange(event, values);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -53,5 +57,9 @@ var MultipleSelect = function (_React$Component) {
 
   return MultipleSelect;
 }(React.Component);
+
+MultipleSelect.propTypes = {
+  onChange: PropTypes.func
+};
 
 module.exports = MultipleSelect;
