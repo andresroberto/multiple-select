@@ -12,7 +12,8 @@
     "url": "https://github.com/andresroberto/react-multiple-select-component"
   },
   "scripts": {
-    "start": "rollup -c"
+    "start": "rollup -c",
+    "lint": "eslint ./src/**/*.js rollup.config.js"
   },
   "author": "Andres Rojas",
   "license": "MIT",
@@ -21,10 +22,13 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^5.2.0",
+    "eslint-plugin-react": "^7.10.0",
     "react": "^16.3.1",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3"

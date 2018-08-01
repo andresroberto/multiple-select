@@ -1,10 +1,10 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const getValuesFromSelect = selectElement =>
   [...selectElement.options]
-    .reduce((values, option) => {
-      if (option.value) {
+    .reduce((values, { value }) => {
+      if (value) {
         return [...values, value];
       }
 
@@ -31,4 +31,4 @@ MultipleSelect.propTypes = {
   onChange: PropTypes.func,
 };
 
-module.exports = MultipleSelect;
+export default MultipleSelect;

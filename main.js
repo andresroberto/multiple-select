@@ -1,5 +1,10 @@
 'use strict';
 
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = _interopDefault(require('react'));
+var PropTypes = _interopDefault(require('prop-types'));
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -12,12 +17,11 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var React = require('react');
-var PropTypes = require('prop-types');
-
 var getValuesFromSelect = function getValuesFromSelect(selectElement) {
-  return [].concat(_toConsumableArray(selectElement.options)).reduce(function (values, option) {
-    if (option.value) {
+  return [].concat(_toConsumableArray(selectElement.options)).reduce(function (values, _ref) {
+    var value = _ref.value;
+
+    if (value) {
       return [].concat(_toConsumableArray(values), [value]);
     }
 
@@ -29,7 +33,7 @@ var MultipleSelect = function (_React$Component) {
   _inherits(MultipleSelect, _React$Component);
 
   function MultipleSelect() {
-    var _ref;
+    var _ref2;
 
     var _temp, _this, _ret;
 
@@ -39,7 +43,7 @@ var MultipleSelect = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call.apply(_ref, [this].concat(args))), _this), _this.handleChange = function (event) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = MultipleSelect.__proto__ || Object.getPrototypeOf(MultipleSelect)).call.apply(_ref2, [this].concat(args))), _this), _this.handleChange = function (event) {
       var values = getValuesFromSelect(event.target);
       _this.props.onChange(event, values);
     }, _temp), _possibleConstructorReturn(_this, _ret);

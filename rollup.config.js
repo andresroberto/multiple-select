@@ -11,7 +11,8 @@ export default {
       presets: [['env', { modules: false }], 'react'],
       exclude: 'node_modules/**',
       babelrc: false,
-      plugins: ["transform-class-properties"]
+      plugins: ['transform-class-properties']
     }),
-  ]
+  ],
+  external: ['react','prop-types'],
 };
