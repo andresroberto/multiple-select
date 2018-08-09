@@ -13,8 +13,12 @@ const getValuesFromSelect = selectElement =>
 
 class MultipleSelect extends React.Component {
   handleChange = (event) => {
+    const { onChange } = this.props;
     const values = getValuesFromSelect(event.target);
-    this.props.onChange(event, values);
+
+    if (typeof onChange === 'function') {
+      onChange(event, values);
+    }
   }
   render() {
     return (
